@@ -7,8 +7,11 @@ public class User
     public string TgUsername { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public float Points { get; set; }
     public string ImageUrl { get; set; }
+    public float Points { get; set; }
+    
+    public string RefreshToken { get; set; }
+    public DateTime ExpiresToken { get; set; }
     
     public ICollection<UserToGroup> UserToGroups { get; set; }
     public ICollection<LessonAttendance> LessonAttendances { get; set; }
