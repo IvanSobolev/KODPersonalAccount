@@ -12,9 +12,6 @@ public class User
     public string RefreshToken { get; set; }
     public DateTime ExpiresToken { get; set; }
     
-    public ICollection<UserToGroup> UserToGroups { get; set; }
-    public ICollection<LessonAttendance> LessonAttendances { get; set; }
-    
     public ICollection<Guid> GroupsIds { get; set; } = new List<Guid>();
     public ICollection<Guid> TaughtGroupsId { get; set; } = new List<Guid>();
     public ICollection<Guid> AttendedLessonIds { get; set; } = new List<Guid>();
