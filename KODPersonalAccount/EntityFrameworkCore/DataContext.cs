@@ -52,17 +52,14 @@ public class DataContext : DbContext
                 .HasMaxLength(128)
                 .HasConversion<string>()
                 .IsRequired();
+
+            l.HasIndex(p => p.Date);
         });
-        
         
         modelBuilder.Entity<User>()
             .Property(u => u.Role)
             .HasConversion<string>()
             .HasMaxLength(50);
-        
-        
-        modelBuilder.Entity<Lesson>()
-            .HasIndex(l => l.Date);
 
         modelBuilder.Entity<User>()
             .HasIndex(u => u.Role);
