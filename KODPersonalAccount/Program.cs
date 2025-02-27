@@ -1,9 +1,17 @@
+using KODPersonalAccount.Application.Lessons;
+using KODPersonalAccount.Contracts.Lessons;
+using KODPersonalAccount.EntityFrameworkCore.Implementation.Repository;
+using KODPersonalAccount.Interfaces.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<ILessonRepository, LessonRepository>();
+builder.Services.AddScoped<ILessonAppService, LessonAppService>();
 
 var app = builder.Build();
 
