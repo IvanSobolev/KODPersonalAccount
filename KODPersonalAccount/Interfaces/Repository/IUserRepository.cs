@@ -45,7 +45,7 @@ public interface IUserRepository
     /// <param name="newName">new name</param>
     /// <param name="isLastname">flag to select first(false) or last(true) name</param>
     /// <returns>Operation Result</returns>
-    Task<OperationResult> UpdateNameAsync(long userId, string oldName, string newName, bool isLastname = false);
+    Task<OperationResult> UpdateNameAsync(long userId, string newName, bool isLastname = false);
     
     /// <summary>
     /// Add points to user
