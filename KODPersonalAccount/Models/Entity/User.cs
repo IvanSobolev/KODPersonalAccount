@@ -9,11 +9,10 @@ public class User
     public string LastName { get; set; }
     public string ImageUrl { get; set; }
     public float Points { get; set; }
-    
     public string RefreshToken { get; set; }
     public DateTime ExpiresToken { get; set; }
     
-    public ICollection<UserToGroup> UserToGroups { get; set; }
-    public ICollection<LessonAttendance> LessonAttendances { get; set; }
-    public ICollection<Group> TaughtGroups { get; set; }
+    public ICollection<Guid> GroupsIds { get; set; } = new List<Guid>();
+    public ICollection<Guid> TaughtGroupsId { get; set; } = new List<Guid>();
+    public ICollection<Guid> AttendedLessonIds { get; set; } = new List<Guid>();
 }
