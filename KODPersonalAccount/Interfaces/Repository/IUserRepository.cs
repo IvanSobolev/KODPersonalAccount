@@ -28,7 +28,7 @@ public interface IUserRepository
     /// </summary>
     /// <param name="id">telegram id</param>
     /// <returns>User with given id or NotFoundException</returns>
-    Task<User> GetUserByIdAsync(long id);
+    Task<User?> GetUserByIdAsync(long id);
     
     /// <summary>
     /// Add user to DB
