@@ -29,7 +29,7 @@ public class LessonController :
         return Ok(lesson);
     }
 
-    [HttpGet ("{groupId:long}")]
+    [HttpGet]
     public async Task<ActionResult<List<Lesson>>> GetListAsync(
         long? groupId)
     {
