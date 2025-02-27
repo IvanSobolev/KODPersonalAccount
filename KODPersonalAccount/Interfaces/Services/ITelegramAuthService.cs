@@ -4,7 +4,7 @@ namespace KODPersonalAccount.Interfaces.Services;
 
 public interface ITelegramAuthService
 {
-    Task<TelegramUser> GetUserFromInitData(string initData);
-    Task<bool> ValidateInitData(string initData, string botToken);
-    Task<TelegramUser> ExtractUserFromInitData(string initData);
+    Task<TelegramUser> GetUserFromInitDataAsync(string initData);
+    Task<bool> ValidateInitDataAsync(string initData, string botToken);
+    Task<TelegramUser> ExtractUserFromInitDataAsync(string initData);
 }
