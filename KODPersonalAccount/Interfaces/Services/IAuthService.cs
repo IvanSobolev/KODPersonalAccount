@@ -4,6 +4,6 @@ namespace KODPersonalAccount.Interfaces.Services;
 
 public interface IAuthService
 {
-    Task<TokenOutputDto?> Auth(string initData);
-    Task<TokenOutputDto?> RefreshToken(string refreshToken);
+    Task<TokenOutputDto?> AuthAsync(string initData);
+    Task<TokenOutputDto?> RefreshTokenAsync(string refreshToken);
 }
