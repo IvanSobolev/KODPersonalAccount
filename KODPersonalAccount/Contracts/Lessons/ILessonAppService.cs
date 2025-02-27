@@ -1,12 +1,11 @@
-﻿using KODPersonalAccount.Models;
 using KODPersonalAccount.Models.Entity;
 
-namespace KODPersonalAccount.Interfaces.Repository;
+namespace KODPersonalAccount.Contracts.Lessons;
 
 /// <summary>
-/// Репозиторий урока.
+/// Сервис урока.
 /// </summary>
-public interface ILessonRepository
+public interface ILessonAppService
 {
     /// <summary>
     /// Получить урок.
@@ -27,32 +26,20 @@ public interface ILessonRepository
     /// <summary>
     /// Создать урок.
     /// </summary>
-    /// <param name="groupId">Идентификатор группы.</param>
-    /// <param name="title">Название.</param>
-    /// <param name="date">Дата проведения.</param>
-    /// <param name="recordLink">Ссылка на запись.</param>
+    /// <param name="input">Данные для создания урока.</param>
     /// <returns>Урок.</returns>
     Task<Lesson> CreateAsync(
-        long groupId,
-        string title,
-        DateTime? date,
-        string? recordLink);
+        LessonCreateDto input);
 
     /// <summary>
     /// Обновить урок.
     /// </summary>
     /// <param name="id">Идентификатор.</param>
-    /// <param name="title">Название.</param>
-    /// <param name="date">Дата проведения.</param>
-    /// <param name="recordLink">Ссылка на запись.</param>
-    /// <param name="attendanceIds">Идентификатор присутствующих студентов.</param>
+    /// <param name="input">Данные для создания урока.</param>
     /// <returns>Обновлённый урок.</returns>
     Task<Lesson?> UpdateAsync(
         Guid id,
-        string? title,
-        DateTime? date,
-        string? recordLink,
-        List<long>? attendanceIds);
+        LessonUpdateDto input);
     
     /// <summary>
     /// Удалить урок.

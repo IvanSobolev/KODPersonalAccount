@@ -12,6 +12,12 @@ public class DataContext : DbContext
     public DbSet<UserToGroup> UserToGroups { get; set; }
     public DbSet<LessonAttendance> LessonAttendances { get; set; }
 
+
+    public DataContext(DbContextOptions<DataContext> options)
+        : base(options)
+    {
+    }
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<UserToGroup>()
@@ -32,22 +38,28 @@ public class DataContext : DbContext
             .WithMany(u => u.TaughtGroups)
             .HasForeignKey(g => g.TeacherId)
             .OnDelete(DeleteBehavior.Restrict);
-        
-        
-        modelBuilder.Entity<Lesson>()
-            .HasOne(l => l.Group)
-            .WithMany(g => g.Lessons)
-            .HasForeignKey(l => l.GroupId);
-        
+
+
+        modelBuilder.Entity<Lesson>(l =>
+        {
+            l.ToTable("Lessons");
+            
+            l.HasKey(k => k.Id);
+            l.HasOne<Group>().WithMany()
+                .HasForeignKey(p => p.GroupId)
+                .OnDelete(DeleteBehavior.Restrict);
+            l.Property(p => p.Title)
+                .HasMaxLength(128)
+                .HasConversion<string>()
+                .IsRequired();
+
+            l.HasIndex(p => p.Date);
+        });
         
         modelBuilder.Entity<User>()
             .Property(u => u.Role)
             .HasConversion<string>()
             .HasMaxLength(50);
-        
-        
-        modelBuilder.Entity<Lesson>()
-            .HasIndex(l => l.Date);
 
         modelBuilder.Entity<User>()
             .HasIndex(u => u.Role);
