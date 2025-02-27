@@ -10,7 +10,7 @@ public interface IRefreshTokenRepository
     /// </summary>
     /// <param name="token">refresh token</param>
     /// <returns>User with given refresh token or NotFoundException</returns>
-    Task<User> GetUserByTokenAsync(string token);
+    Task<User?> GetUserByTokenAsync(string token);
     
     /// <summary>
     /// Replace empty refresh token for the user with id
