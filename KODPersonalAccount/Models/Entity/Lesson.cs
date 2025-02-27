@@ -26,7 +26,7 @@ public class Lesson
     public DateTime? Date { get; set; }
     
     /// <summary>
-    /// Запись урока.
+    /// Ссылка на запись урока.
     /// </summary>
     public string? RecordLink { get; private set; }
     
