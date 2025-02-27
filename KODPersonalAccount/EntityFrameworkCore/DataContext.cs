@@ -32,12 +32,21 @@ public class DataContext : DbContext
             .WithMany(u => u.TaughtGroups)
             .HasForeignKey(g => g.TeacherId)
             .OnDelete(DeleteBehavior.Restrict);
-        
-        
-        modelBuilder.Entity<Lesson>()
-            .HasOne(l => l.Group)
-            .WithMany(g => g.Lessons)
-            .HasForeignKey(l => l.GroupId);
+
+
+        modelBuilder.Entity<Lesson>(l =>
+        {
+            l.ToTable("Lessons");
+            
+            l.HasKey(k => k.Id);
+            l.HasOne<Group>().WithMany()
+                .HasForeignKey(p => p.GroupId)
+                .OnDelete(DeleteBehavior.Restrict);
+            l.Property(p => p.Title)
+                .HasMaxLength(128)
+                .HasConversion<string>()
+                .IsRequired();
+        });
         
         
         modelBuilder.Entity<User>()
