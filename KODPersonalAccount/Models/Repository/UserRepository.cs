@@ -12,7 +12,9 @@ public class UserRepository(DataContext dataContext) : IUserRepository
     public async Task<(IEnumerable<User> Users, int TotalCount)> GetAllUsersAsync(int page, int pageSize, bool withoutGroup = false)
     {
         if (page < 1 || pageSize < 1)
-        { throw new ArgumentException("Page and pageSize must be greater than 0."); }
+        {
+            return (new List<User>(), 0);
+        }
         
         var query = _context.Users.AsQueryable();
         _cachedTotalCount ??= await query.CountAsync();
@@ -31,7 +33,9 @@ public class UserRepository(DataContext dataContext) : IUserRepository
     public async Task<(IEnumerable<User> Users, int TotalCount)> GetSortedByPointsAsync(int page, int pageSize, bool descending = false)
     {
         if (page < 1 || pageSize < 1)
-        { throw new ArgumentException("Page and pageSize must be greater than 0."); }
+        {
+            return (new List<User>(), 0);
+        }
         
         var query = _context.Users.AsQueryable();
         _cachedTotalCount ??= await query.CountAsync();
@@ -47,12 +51,12 @@ public class UserRepository(DataContext dataContext) : IUserRepository
         return (users, _cachedTotalCount.Value);
     }
 
-    public async Task<User> GetUserByIdAsync(long id)
+    public async Task<User?> GetUserByIdAsync(long id)
     {
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
         if (user == null)
         {
-            throw new NullReferenceException("User not found");
+            return null;
         }
 
         return user;
@@ -161,7 +165,7 @@ public class UserRepository(DataContext dataContext) : IUserRepository
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
         if (user == null)
         {
-            throw new NullReferenceException("User not found");
+            return;
         }
         _context.Users.Remove(user);
         await _context.SaveChangesAsync();
