@@ -1,16 +1,63 @@
 ﻿using KODPersonalAccount.Models;
 using KODPersonalAccount.Models.Entity;
 
-namespace KODPersonalAccount.Interfaces;
+namespace KODPersonalAccount.Interfaces.Repository;
 
+/// <summary>
+/// Репозиторий урока.
+/// </summary>
 public interface ILessonRepository
 {
-    Task<(IEnumerable<Lesson> lessons, int TotalCount)> GetAllDateSortedLessonsAsync(int page, int pageSize);
-    Task<(IEnumerable<Lesson> lessons, int TotalCount)> GetDateSortedLessonsForGroupAsync(long groupId, int page, int pageSize);
-    Task<Lesson> GetLessonByIdAsync(long id);
-    Task<OperationResult> AddLessonAsync(Lesson lesson);
-    Task<OperationResult> MarkAttendanceAsync(long lessonId, long userId);
-    Task<OperationResult> UploadLessonRecordAsync(long lessonId, string recordLink);
-    Task<OperationResult> RenameAsync(long lessonId, string newName);
-    Task<OperationResult> DeleteLesson(long id);
+    /// <summary>
+    /// Получить урок.
+    /// </summary>
+    /// <param name="id">Идентификатор.</param>
+    /// <returns>Урок.</returns>
+    Task<Lesson?> GetAsync(
+        Guid id);
+    
+    /// <summary>
+    /// Получить список уроков.
+    /// </summary>
+    /// <param name="groupId">Идентификатор группы.</param>
+    /// <returns>Список уроков.</returns>
+    Task<List<Lesson>> GetListAsync(
+        long? groupId);
+    
+    /// <summary>
+    /// Создать урок.
+    /// </summary>
+    /// <param name="groupId">Идентификатор группы.</param>
+    /// <param name="title">Название.</param>
+    /// <param name="date">Дата проведения.</param>
+    /// <param name="recordLink">Ссылка на запись.</param>
+    /// <returns>Урок.</returns>
+    Task<Lesson> CreateAsync(
+        long groupId,
+        string title,
+        DateTime? date,
+        string? recordLink);
+
+    /// <summary>
+    /// Обновить урок.
+    /// </summary>
+    /// <param name="id">Идентификатор.</param>
+    /// <param name="title">Название.</param>
+    /// <param name="date">Дата проведения.</param>
+    /// <param name="recordLink">Ссылка на запись.</param>
+    /// <param name="attendanceIds">Идентификатор присутствующих студентов.</param>
+    /// <returns>Обновлённый урок.</returns>
+    Task<Lesson?> UpdateAsync(
+        Guid id,
+        string? title,
+        DateTime? date,
+        string? recordLink,
+        List<long>? attendanceIds);
+    
+    /// <summary>
+    /// Удалить урок.
+    /// </summary>
+    /// <param name="id">Идентификатор.</param>
+    Task DeleteAsync(
+        Guid id);
 }
