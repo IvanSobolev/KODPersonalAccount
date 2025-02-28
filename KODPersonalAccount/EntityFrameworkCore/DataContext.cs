@@ -61,13 +61,12 @@ public class DataContext : DbContext
 
             l.HasIndex(p => p.Date);
         });
-        
-        modelBuilder.Entity<User>()
-            .Property(u => u.Role)
-            .HasConversion<string>()
-            .HasMaxLength(50);
 
-        modelBuilder.Entity<User>()
-            .HasIndex(u => u.Role);
+        modelBuilder.Entity<User>(u =>
+        {
+            u.ToTable("Users");
+
+            u.HasKey(k => k.Id);
+        });
     }
 }

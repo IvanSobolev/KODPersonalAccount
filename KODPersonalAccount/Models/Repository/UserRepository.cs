@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace KODPersonalAccount.Models.Repository;
 
-public class UserRepository(DataContext dataContext) : IUserRepository
+public class UserRepository(DataContext context) : IUserRepository
 {
-    private readonly DataContext _context = dataContext;
+    private readonly DataContext _context = context;
     private int? _cachedTotalCount;
 
     public async Task<(IEnumerable<User> Users, int TotalCount)> GetAllUsersAsync(int page, int pageSize, bool withoutGroup = false)

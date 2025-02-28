@@ -1,18 +1,52 @@
 ﻿namespace KODPersonalAccount.Models.Entity;
 
+/// <summary>
+/// Пользователь.
+/// </summary>
 public class User
 {
+    /// <summary>
+    /// Идентификатор.
+    /// </summary>
     public long Id { get; set; }
-    public string Role { get; set; }
-    public string TgUsername { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string ImageUrl { get; set; }
-    public float Points { get; set; }
-    public string RefreshToken { get; set; }
-    public DateTime ExpiresToken { get; set; }
     
-    public ICollection<Guid> GroupsIds { get; set; } = new List<Guid>();
-    public ICollection<Guid> TaughtGroupsId { get; set; } = new List<Guid>();
-    public ICollection<Guid> AttendedLessonIds { get; set; } = new List<Guid>();
+    /// <summary>
+    /// Роль.
+    /// </summary>
+    public string Role { get; set; }
+    
+    /// <summary>
+    /// Имя пользователя в Телеграме.
+    /// </summary>
+    public string TgUsername { get; set; }
+    
+    /// <summary>
+    /// Имя.
+    /// </summary>
+    public string FirstName { get; set; }
+    
+    /// <summary>
+    /// Фамилия.
+    /// </summary>
+    public string LastName { get; set; }
+    
+    /// <summary>
+    /// Ссылка на аватарку пользователя.
+    /// </summary>
+    public string ImageUrl { get; set; }
+    
+    /// <summary>
+    /// Баллы.
+    /// </summary>
+    public float Points { get; set; }
+    
+    /// <summary>
+    /// Refresh-токен.
+    /// </summary>
+    public string RefreshToken { get; set; }
+    
+    /// <summary>
+    /// Время жизни refresh-токена.
+    /// </summary>
+    public DateTime ExpiresToken { get; set; }
 }
