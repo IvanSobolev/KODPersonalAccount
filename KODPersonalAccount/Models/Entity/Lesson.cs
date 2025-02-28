@@ -33,7 +33,7 @@ public class Lesson
     /// <summary>
     /// Идентификатор присутствующих студентов.
     /// </summary>
-    public List<long> AttendanceIds { get; private set; }
+    public List<User> AttendanceIds { get; private set; }
 
     /// <summary>
     /// Создание на основе первичных данных.
@@ -98,11 +98,11 @@ public class Lesson
     }
 
     public void SetAttendanceIds(
-        List<long> attendanceIds)
+        List<User> attendances)
     {
-        if (attendanceIds.Count > 0)
-            foreach (var attendanceId in attendanceIds)
-                if (!AttendanceIds.Contains(attendanceId))
-                    AttendanceIds.Add(attendanceId);
+        if (attendances.Count > 0)
+            foreach (var attendance in attendances)
+                if (!AttendanceIds.Contains(attendance))
+                    AttendanceIds.Add(attendance);
     }
 }

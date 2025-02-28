@@ -9,8 +9,6 @@ public class DataContext : DbContext
     public DbSet<Group> Groups { get; set; }
     public DbSet<Direction> Directions { get; set; }
     public DbSet<Lesson> Lessons { get; set; }
-    public DbSet<UserToGroup> UserToGroups { get; set; }
-    public DbSet<LessonAttendance> LessonAttendances { get; set; }
 
 
     public DataContext(DbContextOptions<DataContext> options)
@@ -20,16 +18,11 @@ public class DataContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<UserToGroup>()
-            .HasKey(ug => new { ug.UserId, ug.GroupId });
-
-        modelBuilder.Entity<LessonAttendance>()
-            .HasKey(la => new { la.LessonId, la.UserId });
 
         modelBuilder.Entity<Group>(g =>
         {
             g.ToTable("Groups");
-            
+
             g.HasKey(k => k.Id);
             g.HasOne<Direction>().WithMany()
                 .HasForeignKey(p => p.DirectionId)
@@ -39,7 +32,7 @@ public class DataContext : DbContext
                 .OnDelete(DeleteBehavior.Restrict);
             g.HasMany<User>().WithMany()
                 .UsingEntity("UserToGroup");
-
+        });
         modelBuilder.Entity<Direction>(d =>
         {
             d.ToTable("Directions");
