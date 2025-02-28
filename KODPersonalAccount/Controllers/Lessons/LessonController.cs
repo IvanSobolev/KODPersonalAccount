@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace KODPersonalAccount.Controllers.Lessons;
 
 [ApiController]
-[Route("[controller]")]
+[Route("lesson/[controller]")]
 public class LessonController : 
     Controller
 {
