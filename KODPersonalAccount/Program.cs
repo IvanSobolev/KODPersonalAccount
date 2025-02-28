@@ -1,4 +1,6 @@
+using KODPersonalAccount.Application.Groups;
 using KODPersonalAccount.Application.Lessons;
+using KODPersonalAccount.Contracts.Groups;
 using KODPersonalAccount.Contracts.Lessons;
 using KODPersonalAccount.EntityFrameworkCore.Implementation.Repository;
 using KODPersonalAccount.Interfaces.Repository;
@@ -13,6 +15,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ILessonRepository, LessonRepository>();
 builder.Services.AddScoped<ILessonAppService, LessonAppService>();
+
+
+builder.Services.AddScoped<IGroupRepository, GroupRepository>();
+builder.Services.AddScoped<IGroupAppService, GroupAppService>();
 
 builder.Services.AddDbContext<DataContext>(options =>
 {
