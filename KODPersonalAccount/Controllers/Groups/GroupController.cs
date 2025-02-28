@@ -33,14 +33,14 @@ public class GroupController :
     public async Task<ActionResult<List<Group>>> GetListAsync(
         int? studyYears,
         string? schedule,
-        long? directionId,
+        string? direction,
         long? teacherId,
         long? studentId)
     {
         var groups = await _groupAppService.GetListAsync(
             studyYears,
             schedule,
-            directionId,
+            direction,
             teacherId,
             studentId);
         

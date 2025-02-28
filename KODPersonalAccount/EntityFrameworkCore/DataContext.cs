@@ -25,13 +25,13 @@ public class DataContext : DbContext
 
             g.HasKey(k => k.Id);
             g.HasOne<Direction>().WithMany()
-                .HasForeignKey(p => p.DirectionId)
+                .HasForeignKey(p => p.Direction)
                 .OnDelete(DeleteBehavior.Restrict);
             g.HasOne<User>().WithMany()
                 .HasForeignKey(p => p.TeacherId)
                 .OnDelete(DeleteBehavior.Restrict);
-            g.HasMany<User>().WithMany()
-                .UsingEntity("UserToGroup");
+            g.HasMany<User>(p => p.Students).WithMany()
+                .UsingEntity("StudentToGroup");
         });
         modelBuilder.Entity<Direction>(d =>
         {
@@ -56,6 +56,8 @@ public class DataContext : DbContext
                 .HasMaxLength(128)
                 .HasConversion<string>()
                 .IsRequired();
+            l.HasMany<User>(p => p.Attendances).WithMany()
+                .UsingEntity("Attendances");
 
             l.HasIndex(p => p.Date);
         });

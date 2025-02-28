@@ -21,9 +21,9 @@ public class Group
     public string? Schedule { get; set; }   
     
     /// <summary>
-    /// Идентификатор направления.
+    /// Направление.
     /// </summary>
-    public long DirectionId { get; set; }
+    public string? Direction { get; set; }
     
     /// <summary>
     /// Идентификатор педагога.
@@ -40,21 +40,21 @@ public class Group
     /// </summary>
     /// <param name="id">Идентификатор.</param>
     /// <param name="schedule">Расписание занятий.</param>
-    /// <param name="directionId">Идентификатор направления.</param>
+    /// <param name="direction">Направление.</param>
     /// <param name="teacherId">Идентификатор педагога.</param>
     /// <param name="students">Студенты.</param>
     /// <param name="studyYears">Год обучения.</param>
     public Group(
         Guid id,
         string? schedule,
-        long directionId,
+        string direction,
         long? teacherId,
         List<User?> students,
         int studyYears = 1)
     {
         Id = id;
         StudyYears = studyYears;
-        DirectionId = directionId;
+        Direction = direction;
         Students = new();
 
         if (students is not null)

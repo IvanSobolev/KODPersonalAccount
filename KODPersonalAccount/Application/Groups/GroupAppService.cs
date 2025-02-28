@@ -27,14 +27,14 @@ public class GroupAppService :
     public async Task<List<Group>> GetListAsync(
         int? studyYears, 
         string? schedule, 
-        long? directionId,
+        string? direction,
         long? teacherId,
         long? studentId)
     {
         return await _groupRepository.GetListAsync(
             studyYears: studyYears,
             schedule: schedule,
-            directionId: directionId,
+            direction: direction,
             teacherId: teacherId,
             studentId: studentId);
     }
@@ -45,7 +45,7 @@ public class GroupAppService :
     {
         return await _groupRepository.CreateAsync(
             schedule: input.Schedule,
-            directionId: input.DirectionId,
+            direction: input.Direction,
             teacherId: input.TeacherId,
             studentIds: input.StudentIds,
             studyYears: input.StudyYears);
@@ -60,7 +60,7 @@ public class GroupAppService :
             id: id,
             studyYears: input.StudyYears,
             schedule: input.Schedule,
-            directionId: input.DirectionId,
+            direction: input.Direction,
             teacherId: input.TeacherId,
             studentIds: input.StudentIds);
     }

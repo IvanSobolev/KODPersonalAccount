@@ -16,9 +16,9 @@ public record GroupUpdateDto
     public string? Schedule { get; set; }
     
     /// <summary>
-    /// Идентификатор направления.
+    /// Направление.
     /// </summary>
-    public long? DirectionId { get; set; }
+    public string? Direction { get; set; }
     
     /// <summary>
     /// Идентификатор педагога.

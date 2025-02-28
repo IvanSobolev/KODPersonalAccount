@@ -27,7 +27,7 @@ public class GroupRepository :
     public async Task<List<Group>> GetListAsync(
         int? studyYears, 
         string? schedule, 
-        long? directionId,
+        string? direction,
         long? teacherId,
         long? studentId)
     {
@@ -43,9 +43,9 @@ public class GroupRepository :
             query = query.Where(g => g.Schedule == schedule).ToList();
         }
 
-        if (directionId is not null)
+        if (direction is not null)
         {
-            query = query.Where(g => g.DirectionId == directionId).ToList();
+            query = query.Where(g => g.Direction == direction).ToList();
         }
 
         if (teacherId is not null)
@@ -69,7 +69,7 @@ public class GroupRepository :
     /// <inheritdoc/>
     public async Task<Group> CreateAsync(
         string? schedule,
-        long directionId,
+        string direction,
         long? teacherId,
         List<long>? studentIds,
         int studyYears = 1)
@@ -86,7 +86,7 @@ public class GroupRepository :
         var group = new Group(
             id: Guid.NewGuid(),
             schedule: schedule,
-            directionId: directionId,
+            direction: direction,
             teacherId: teacherId,
             students: students,
             studyYears: studyYears);
@@ -102,7 +102,7 @@ public class GroupRepository :
         Guid id,
         int? studyYears,
         string? schedule,
-        long? directionId,
+        string? direction,
         long? teacherId,
         List<long>? studentIds)
     {
@@ -123,11 +123,11 @@ public class GroupRepository :
                 schedule);
         }
 
-        if (directionId is not null)
+        if (direction is not null)
         {
-            if (await _context.Directions.AsNoTracking().AnyAsync(d => d.Id == directionId))
+            if (await _context.Directions.AsNoTracking().AnyAsync(d => d.Title == direction))
             {
-                group.DirectionId = directionId.Value;
+                group.Direction = direction;
             }
         }
         
