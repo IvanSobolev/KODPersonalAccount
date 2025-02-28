@@ -27,18 +27,28 @@ public class DataContext : DbContext
             .HasKey(la => new { la.LessonId, la.UserId });
         
         
-        modelBuilder.Entity<Group>()
-            .HasOne(g => g.Direction)
-            .WithMany(d => d.Groups)
-            .HasForeignKey(g => g.DirectionId)
-            .OnDelete(DeleteBehavior.Restrict);
+        // modelBuilder.Entity<Group>()
+        //     .HasOne(g => g.Direction)
+        //     .WithMany(d => d.Groups)
+        //     .HasForeignKey(g => g.DirectionId)
+        //     .OnDelete(DeleteBehavior.Restrict);
         
-        modelBuilder.Entity<Group>()
-            .HasOne(g => g.Teacher)
-            .WithMany(u => u.TaughtGroups)
-            .HasForeignKey(g => g.TeacherId)
-            .OnDelete(DeleteBehavior.Restrict);
+        // modelBuilder.Entity<Group>()
+        //     .HasOne(g => g.Teacher)
+        //     .WithMany(u => u.TaughtGroups)
+        //     .HasForeignKey(g => g.TeacherId)
+        //     .OnDelete(DeleteBehavior.Restrict);
 
+        modelBuilder.Entity<Direction>(d =>
+        {
+            d.ToTable("Directions");
+
+            d.HasKey(k => k.Title);
+            d.Property(k => k.Title)
+                .HasMaxLength(128);
+            d.Property(k => k.Title)
+                .IsRequired();
+        });
 
         modelBuilder.Entity<Lesson>(l =>
         {
