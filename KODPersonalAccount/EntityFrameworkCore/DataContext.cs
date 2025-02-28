@@ -25,20 +25,21 @@ public class DataContext : DbContext
 
         modelBuilder.Entity<LessonAttendance>()
             .HasKey(la => new { la.LessonId, la.UserId });
-        
-        
-        modelBuilder.Entity<Group>()
-            .HasOne(g => g.Direction)
-            .WithMany(d => d.Groups)
-            .HasForeignKey(g => g.DirectionId)
-            .OnDelete(DeleteBehavior.Restrict);
-        
-        modelBuilder.Entity<Group>()
-            .HasOne(g => g.Teacher)
-            .WithMany(u => u.TaughtGroups)
-            .HasForeignKey(g => g.TeacherId)
-            .OnDelete(DeleteBehavior.Restrict);
 
+        modelBuilder.Entity<Group>(g =>
+        {
+            g.ToTable("Groups");
+            
+            g.HasKey(k => k.Id);
+            g.HasOne<Direction>().WithMany()
+                .HasForeignKey(p => p.DirectionId)
+                .OnDelete(DeleteBehavior.Restrict);
+            g.HasOne<User>().WithMany()
+                .HasForeignKey(p => p.TeacherId)
+                .OnDelete(DeleteBehavior.Restrict);
+            g.HasMany<User>().WithMany()
+                .UsingEntity("UserToGroup");
+        });
 
         modelBuilder.Entity<Lesson>(l =>
         {

@@ -31,9 +31,9 @@ public class Group
     public long? TeacherId { get; set; }
     
     /// <summary>
-    /// Идентификатор студентов.
+    /// Студенты.
     /// </summary>
-    public List<long>? StudentIds { get; set; }
+    public List<User>? Students { get; set; }
 
     /// <summary>
     /// Создание на основе первичных данных.
@@ -42,25 +42,25 @@ public class Group
     /// <param name="schedule">Расписание занятий.</param>
     /// <param name="directionId">Идентификатор направления.</param>
     /// <param name="teacherId">Идентификатор педагога.</param>
-    /// <param name="studentIds">Идентификатор студентов.</param>
+    /// <param name="students">Студенты.</param>
     /// <param name="studyYears">Год обучения.</param>
     public Group(
         Guid id,
         string? schedule,
         long directionId,
         long? teacherId,
-        List<long>? studentIds,
+        List<User?> students,
         int studyYears = 1)
     {
         Id = id;
         StudyYears = studyYears;
         DirectionId = directionId;
-        StudentIds = new();
+        Students = new();
 
-        if (studentIds is not null)
+        if (students is not null)
         {
-            SetStudentIds(
-                studentIds);
+            SetStudents(
+                students);
         }
         
         if (teacherId is not null)
@@ -68,10 +68,10 @@ public class Group
             TeacherId = teacherId;
         }
 
-        if (studentIds is not null)
+        if (students is not null)
         {
-            SetStudentIds(
-                studentIds);
+            SetStudents(
+                students);
         }
         
     }
@@ -94,13 +94,13 @@ public class Group
     /// <summary>
     /// Добавить студентов.
     /// </summary>
-    /// <param name="studentIds">Идентификаторы студентов.</param>
-    public void SetStudentIds(
-        List<long> studentIds)
+    /// <param name="students">Студенты.</param>
+    public void SetStudents(
+        List<User> students)
     {
-        if (studentIds.Count > 0)
-            foreach (long studentId in studentIds)
-                if (!StudentIds.Contains(studentId))
-                    StudentIds.Add(studentId);
+        if (students.Count > 0)
+            foreach (var student in students)
+                if (!Students.Contains(student))
+                    Students.Add(student);
     }
 }
