@@ -1,11 +1,12 @@
-﻿using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Interfaces.Repository;
+using KODPersonalAccount.Models.Entity;
 
-namespace KODPersonalAccount.Interfaces.Repository;
+namespace KODPersonalAccount.Contracts.Directions;
 
 /// <summary>
-/// Репозиторий направления.
+/// Сервис направления.
 /// </summary>
-public interface IDirectionRepository
+public interface IDirectionAppService
 {
     /// <summary>
     /// Получить направление.
@@ -18,22 +19,20 @@ public interface IDirectionRepository
     /// <summary>
     /// Создать направление.
     /// </summary>
-    /// <param name="title">Название.</param>
-    /// <param name="description">Описание.</param>
+    /// <param name="input">Данные для создания направления.</param>
     /// <returns>Направление.</returns>
     Task<Direction> CreateAsync(
-        string title,
-        string description);
+        DirectionCreateDto input);
     
     /// <summary>
     /// Обновить направление.
     /// </summary>
     /// <param name="title">Название.</param>
-    /// <param name="description">Описание.</param>
+    /// <param name="input">Данные для обновления направления.</param>
     /// <returns>Обновлённое направление.</returns>
     Task<Direction?> UpdateAsync(
         string title,
-        string description);
+        DirectionUpdateDto input);
     
     /// <summary>
     /// Удалить направление.
