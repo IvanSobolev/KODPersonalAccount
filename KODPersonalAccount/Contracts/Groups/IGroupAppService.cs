@@ -1,11 +1,11 @@
-﻿using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Models.Entity;
 
-namespace KODPersonalAccount.Interfaces.Repository;
+namespace KODPersonalAccount.Contracts.Groups;
 
 /// <summary>
-/// Репозиторий группы.
+/// Сервис группы.
 /// </summary>
-public interface IGroupRepository
+public interface IGroupAppService
 {
     /// <summary>
     /// Получить группу.
@@ -25,8 +25,8 @@ public interface IGroupRepository
     /// <param name="studentId">Идентификатор студента.</param>
     /// <returns>Список групп.</returns>
     Task<List<Group>> GetListAsync(
-        int? studyYears,
-        string? schedule,
+        int? studyYears, 
+        string? schedule, 
         long? directionId,
         long? teacherId,
         long? studentId);
@@ -34,36 +34,20 @@ public interface IGroupRepository
     /// <summary>
     /// Создать группу.
     /// </summary>
-    /// <param name="directionId">Идентификатор направления.</param>
-    /// <param name="schedule">Расписание занятий.</param>
-    /// <param name="teacherId">Идентификатор педагога.</param>
-    /// <param name="studentIds">Идентификатор студентов.</param>
-    /// <param name="studyYears">Год обучения.</param>
+    /// <param name="input">Данные для создания группы.</param>
     /// <returns>Группа.</returns>
     Task<Group> CreateAsync(
-        string? schedule,
-        long directionId,
-        long? teacherId,
-        List<long>? studentIds, 
-        int studyYears = 1);
-    
+        GroupCreateDto input);
+
     /// <summary>
     /// Обновить группу.
     /// </summary>
     /// <param name="id">Идентификатор.</param>
-    /// <param name="studyYears">Год обучения.</param>
-    /// <param name="schedule">Расписание.</param>
-    /// <param name="directionId">Идентификатор направления.</param>
-    /// <param name="teacherId">Идентификатор педагога.</param>
-    /// <param name="studentIds">Идентификатор студентов.</param>
-    /// <returns>Обновлённая группа.</returns>
+    /// <param name="input">Данные для обновления группы.</param>
+    /// <returns>Обновленная группа.</returns>
     Task<Group?> UpdateAsync(
         Guid id,
-        int? studyYears,
-        string? schedule,
-        long? directionId,
-        long? teacherId,
-        List<long>? studentIds);
+        GroupUpdateDto input);
     
     /// <summary>
     /// Удалить группу.

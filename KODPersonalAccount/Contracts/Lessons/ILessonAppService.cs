@@ -35,7 +35,7 @@ public interface ILessonAppService
     /// Обновить урок.
     /// </summary>
     /// <param name="id">Идентификатор.</param>
-    /// <param name="input">Данные для создания урока.</param>
+    /// <param name="input">Данные для обновления урока.</param>
     /// <returns>Обновлённый урок.</returns>
     Task<Lesson?> UpdateAsync(
         Guid id,
