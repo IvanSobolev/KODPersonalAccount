@@ -39,6 +39,16 @@ public class DataContext : DbContext
                 .OnDelete(DeleteBehavior.Restrict);
             g.HasMany<User>().WithMany()
                 .UsingEntity("UserToGroup");
+
+        modelBuilder.Entity<Direction>(d =>
+        {
+            d.ToTable("Directions");
+
+            d.HasKey(k => k.Title);
+            d.Property(k => k.Title)
+                .HasMaxLength(128);
+            d.Property(k => k.Title)
+                .IsRequired();
         });
 
         modelBuilder.Entity<Lesson>(l =>
