@@ -21,7 +21,7 @@ public interface ILessonAppService
     /// <param name="groupId">Идентификатор группы.</param>
     /// <returns>Список уроков.</returns>
     Task<List<Lesson>> GetListAsync(
-        long? groupId);
+        Guid? groupId);
     
     /// <summary>
     /// Создать урок.

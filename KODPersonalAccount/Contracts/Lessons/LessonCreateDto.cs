@@ -8,7 +8,7 @@ public record LessonCreateDto
     /// <summary>
     /// Идентификатор группы.
     /// </summary>
-    public long GroupId { get; set; }
+    public Guid GroupId { get; set; }
     
     /// <summary>
     /// Название.

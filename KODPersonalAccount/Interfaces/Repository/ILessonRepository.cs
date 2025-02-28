@@ -22,7 +22,7 @@ public interface ILessonRepository
     /// <param name="groupId">Идентификатор группы.</param>
     /// <returns>Список уроков.</returns>
     Task<List<Lesson>> GetListAsync(
-        long? groupId);
+        Guid? groupId);
     
     /// <summary>
     /// Создать урок.
@@ -33,7 +33,7 @@ public interface ILessonRepository
     /// <param name="recordLink">Ссылка на запись.</param>
     /// <returns>Урок.</returns>
     Task<Lesson> CreateAsync(
-        long groupId,
+        Guid groupId,
         string title,
         DateTime? date,
         string? recordLink);

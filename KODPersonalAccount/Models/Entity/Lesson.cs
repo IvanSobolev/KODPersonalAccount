@@ -13,7 +13,7 @@ public class Lesson
     /// <summary>
     /// Идентификатор группы.
     /// </summary>
-    public long GroupId { get; init; }
+    public Guid? GroupId { get; init; }
     
     /// <summary>
     /// Название.
@@ -33,18 +33,19 @@ public class Lesson
     /// <summary>
     /// Идентификатор присутствующих студентов.
     /// </summary>
-    public List<User> AttendanceIds { get; private set; }
+    public List<User> Attendances { get; private set; }
 
     /// <summary>
     /// Создание на основе первичных данных.
     /// </summary>
     /// <param name="id">Идентификатор.</param>
+    /// <param name="groupId">Идентификатор группы.</param>
     /// <param name="title">Название.</param>
     /// <param name="date">Дата проведения.</param>
     /// <param name="recordLink">Ссылка на запись.</param>
     public Lesson(
         Guid id,
-        long groupId,
+        Guid groupId,
         string title,
         DateTime? date,
         string? recordLink)
@@ -66,7 +67,7 @@ public class Lesson
 
     private Lesson()
     {
-        AttendanceIds = new();
+        Attendances = new();
     }
 
     /// <summary>
@@ -97,12 +98,16 @@ public class Lesson
         }
     }
 
-    public void SetAttendanceIds(
+    /// <summary>
+    /// Установить присутствующих студентов.
+    /// </summary>
+    /// <param name="attendances">Присутствующие студенты.</param>
+    public void SetAttendances(
         List<User> attendances)
     {
         if (attendances.Count > 0)
             foreach (var attendance in attendances)
-                if (!AttendanceIds.Contains(attendance))
-                    AttendanceIds.Add(attendance);
+                if (!Attendances.Contains(attendance))
+                    Attendances.Add(attendance);
     }
 }

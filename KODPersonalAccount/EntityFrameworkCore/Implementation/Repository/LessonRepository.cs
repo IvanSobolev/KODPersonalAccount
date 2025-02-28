@@ -27,7 +27,7 @@ public class LessonRepository :
 
     /// <inheritdoc/>
     public async Task<List<Lesson>> GetListAsync(
-        long? groupId)
+        Guid? groupId)
     {
         var lessons = await _context.Lessons.AsNoTracking().ToListAsync();
 
@@ -41,7 +41,7 @@ public class LessonRepository :
 
     /// <inheritdoc/>
     public async Task<Lesson> CreateAsync(
-        long groupId, 
+        Guid groupId, 
         string title, 
         DateTime? date, 
         string? recordLink)
@@ -89,8 +89,15 @@ public class LessonRepository :
 
         if (attendanceIds is not null && attendanceIds.Count > 0)
         {
-            lesson.SetAttendanceIds(
-                attendanceIds);
+            List<User> attendances = new();
+            foreach (var attendanceId in attendanceIds)
+            {
+                var attendance = await _context.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Id == attendanceId);
+                if (attendance is not null)
+                    attendances.Add(attendance);
+            }
+            lesson.SetAttendances(
+                attendances);
         }
 
         _context.Update(lesson);

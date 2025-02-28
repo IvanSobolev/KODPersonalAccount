@@ -29,9 +29,9 @@ public class LessonController :
         return Ok(lesson);
     }
 
-    [HttpGet]
+    [HttpGet("lessons/{lessonId:guid}")]
     public async Task<ActionResult<List<Lesson>>> GetListAsync(
-        long? groupId)
+        Guid? groupId)
     {
         var lessons = await _lessonAppService.GetListAsync(
             groupId);

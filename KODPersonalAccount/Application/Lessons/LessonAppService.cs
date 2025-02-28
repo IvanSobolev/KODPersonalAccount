@@ -25,7 +25,7 @@ public class LessonAppService :
 
     /// <inheritdoc/>
     public async Task<List<Lesson>> GetListAsync(
-        long? groupId)
+        Guid? groupId)
     {
         return await _lessonRepository.GetListAsync(
             groupId);
