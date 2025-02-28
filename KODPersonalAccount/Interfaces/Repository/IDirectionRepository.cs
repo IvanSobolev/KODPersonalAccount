@@ -1,13 +1,44 @@
-﻿using KODPersonalAccount.Models;
-using KODPersonalAccount.Models.Entity;
+﻿using KODPersonalAccount.Models.Entity;
 
-namespace KODPersonalAccount.Interfaces;
+namespace KODPersonalAccount.Interfaces.Repository;
 
+/// <summary>
+/// Репозиторий направления.
+/// </summary>
 public interface IDirectionRepository
 {
-    Task<(IEnumerable<Direction> Directions, int TotalCount)> GetAllDirectionsAsync(int page, int pageSize);
-    Task<Direction> GetDirectionByIdAsync(long id);
-    Task<OperationResult> RenameAsync(long id, string newName);
-    Task<OperationResult> RedescriptionAsync(long id, string newDescription);
-    Task<OperationResult> DeleteAsync(long id);
+    /// <summary>
+    /// Получить направление.
+    /// </summary>
+    /// <param name="title">Название.</param>
+    /// <returns>Направление.</returns>
+    Task<Direction?> GetAsync(
+        string title);
+
+    /// <summary>
+    /// Создать направление.
+    /// </summary>
+    /// <param name="title">Название.</param>
+    /// <param name="description">Описание.</param>
+    /// <returns>Направление.</returns>
+    Task<Direction> CreateAsync(
+        string title,
+        string description);
+    
+    /// <summary>
+    /// Обновить направление.
+    /// </summary>
+    /// <param name="title">Название.</param>
+    /// <param name="description">Описание.</param>
+    /// <returns>Обновлённое направление.</returns>
+    Task<Direction?> UpdateAsync(
+        string title,
+        string description);
+    
+    /// <summary>
+    /// Удалить направление.
+    /// </summary>
+    /// <param name="title">Название.</param>
+    Task DeleteAsync(
+        string title);
 }
