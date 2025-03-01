@@ -5,7 +5,7 @@ namespace KODPersonalAccount.Contracts.Lessons;
 /// <summary>
 /// Сервис урока.
 /// </summary>
-public interface ILessonAppService
+public interface  ILessonAppService
 {
     /// <summary>
     /// Получить урок.

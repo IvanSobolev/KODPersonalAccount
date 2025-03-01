@@ -1,10 +1,10 @@
-﻿using KODPersonalAccount.Models;
+﻿using KODPersonalAccount.Models.DTO.Users;
 using KODPersonalAccount.Models.Entity;
 using KODPersonalAccount.Models.Strunctures;
 
-namespace KODPersonalAccount.Interfaces.Repository;
+namespace KODPersonalAccount.Interfaces.Services.Users;
 
-public interface IUserRepository
+public interface IUserAppService
 {
     /// <summary>
     /// Get all users from range 
@@ -35,8 +35,8 @@ public interface IUserRepository
     /// </summary>
     /// <param name="user">User data</param>
     /// <returns>Operation Result</returns>
-    Task<OperationResult> AddUserAsync(User user);
-    
+    Task<OperationResult> AddUserAsync(UserAddDto user);
+
     /// <summary>
     /// Change of first or last name
     /// </summary>
@@ -57,12 +57,9 @@ public interface IUserRepository
     /// <summary>
     /// Update user data from telegram
     /// </summary>
-    /// <param name="userId">telegram Id</param>
-    /// <param name="tgUsername">telegram username</param>
-    /// <param name="imageUrl">url to telegram photo</param>
+    /// <param name="user">telegram user</param>
     /// <returns>Operation Result</returns>
-    Task<OperationResult> UpdateTelegramDataAsync(long userId, string tgUsername, string imageUrl);
-    
+    Task<OperationResult> UpdateTelegramDataAsync(TelegramUser user);
     
     /// <summary>
     /// Delete user in table
