@@ -1,5 +1,6 @@
 ﻿using KODPersonalAccount.Models;
 using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Models.Strunctures;
 
 namespace KODPersonalAccount.Interfaces.Repository;
 
@@ -10,9 +11,8 @@ public interface IUserRepository
     /// </summary>
     /// <param name="page">Number of page</param>
     /// <param name="pageSize">Number of people per page</param>
-    /// <param name="withoutGroup">flag for people leaving without a group (if true)</param>
     /// <returns>All user with the given flag, in the page range.</returns>
-    Task<(IEnumerable<User> Users, int TotalCount)> GetAllUsersAsync(int page, int pageSize, bool withoutGroup = false);
+    Task<(IEnumerable<User> Users, int TotalCount)> GetAllUsersAsync(int page, int pageSize);
     
     /// <summary>
     /// Get all sorted by points user from range.

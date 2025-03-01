@@ -1,5 +1,6 @@
 ﻿using KODPersonalAccount.Interfaces.Repository;
 using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Models.Strunctures;
 using Microsoft.EntityFrameworkCore;
 
 namespace KODPersonalAccount.Models.Repository;

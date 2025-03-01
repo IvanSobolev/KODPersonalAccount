@@ -2,6 +2,7 @@
 using System.Web;
 using KODPersonalAccount.Interfaces.Services;
 using KODPersonalAccount.Models.DTO;
+using KODPersonalAccount.Models.Strunctures;
 
 namespace KODPersonalAccount.Services;
 

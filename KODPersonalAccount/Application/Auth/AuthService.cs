@@ -1,7 +1,9 @@
 ﻿using KODPersonalAccount.Interfaces.Repository;
 using KODPersonalAccount.Interfaces.Services;
 using KODPersonalAccount.Models.DTO;
+using KODPersonalAccount.Models.DTO.Token;
 using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Models.Strunctures;
 
 namespace KODPersonalAccount.Services;
 

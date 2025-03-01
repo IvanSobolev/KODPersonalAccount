@@ -1,5 +1,6 @@
 ﻿using KODPersonalAccount.Interfaces.Repository;
 using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Models.Strunctures;
 using Microsoft.EntityFrameworkCore;
 
 namespace KODPersonalAccount.Models.Repository;
@@ -9,7 +10,7 @@ public class UserRepository(DataContext context) : IUserRepository
     private readonly DataContext _context = context;
     private int? _cachedTotalCount;
 
-    public async Task<(IEnumerable<User> Users, int TotalCount)> GetAllUsersAsync(int page, int pageSize, bool withoutGroup = false)
+    public async Task<(IEnumerable<User> Users, int TotalCount)> GetAllUsersAsync(int page, int pageSize)
     {
         if (page < 1 || pageSize < 1)
         {
@@ -18,9 +19,6 @@ public class UserRepository(DataContext context) : IUserRepository
         
         var query = _context.Users.AsQueryable();
         _cachedTotalCount ??= await query.CountAsync();
-        
-        if (withoutGroup)
-        { query = query.Where(u => !u.GroupsIds.Any()); }
         
         var users = await query.OrderBy(u => u.Id)
                                         .Skip((page - 1) * pageSize)

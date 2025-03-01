@@ -1,4 +1,5 @@
 ﻿using KODPersonalAccount.Models.DTO;
+using KODPersonalAccount.Models.DTO.Token;
 
 namespace KODPersonalAccount.Interfaces.Services;
 

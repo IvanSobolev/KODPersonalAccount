@@ -1,6 +1,0 @@
-@KODPersonalAccount_HostAddress = http://localhost:5036
-
-GET {{KODPersonalAccount_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

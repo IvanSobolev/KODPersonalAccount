@@ -1,4 +1,4 @@
-﻿namespace KODPersonalAccount.Models.DTO;
+﻿namespace KODPersonalAccount.Models.DTO.Token;
 
 public class TokenOutputDto(string accessToken, string refreshToken)
 {
