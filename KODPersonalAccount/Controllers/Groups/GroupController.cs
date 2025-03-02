@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace KODPersonalAccount.Controllers.Groups;
 
 [ApiController]
-[Route("group/[controller]")]
+[Route("groups")]
 public class GroupController :
     Controller
 {
@@ -16,7 +16,7 @@ public class GroupController :
         _groupAppService = groupAppService;
     }
 
-    [HttpGet("{groupId:guid}")]
+    [HttpGet("{id:guid}")]
     public async Task<ActionResult<Group?>> GetAsync(
         Guid id)
     {

@@ -73,7 +73,10 @@ public class Group
             SetStudents(
                 students);
         }
-        
+    }
+
+    private Group()
+    {
     }
 
     /// <summary>
