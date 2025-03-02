@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  kod:
+    build:
+      context: "D:\\Work\\KODPersonalAccount"
+      dockerfile: "KODPersonalAccount/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/KODPersonalAccount.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "kodpersonalaccount:dev"
+    ports: []
+    volumes:
+    - "D:\\Work\\KODPersonalAccount\\KODPersonalAccount:/app:rw"
+    - "D:\\Work\\KODPersonalAccount:/src:rw"
+    - "C:\\Users\\Lucky\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
