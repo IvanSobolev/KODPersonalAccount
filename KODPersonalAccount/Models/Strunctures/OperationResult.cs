@@ -1,4 +1,4 @@
-﻿namespace KODPersonalAccount.Models.Strunctures;
+﻿namespace KODPersonalAccount.Applications.Models.Strunctures;
 
 public class OperationResult (bool isSuccess, string? error = default)
 {

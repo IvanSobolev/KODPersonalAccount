@@ -1,4 +1,4 @@
-namespace KODPersonalAccount.Contracts.Directions;
+namespace KODPersonalAccount.Models.DTO;
 
 /// <summary>
 /// DTO создания направления.

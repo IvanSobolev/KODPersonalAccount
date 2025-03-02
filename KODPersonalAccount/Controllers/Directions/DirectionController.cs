@@ -1,8 +1,8 @@
-using KODPersonalAccount.Contracts.Directions;
-using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Models.DTO;
+using KODPersonalAccount.Applications.Models.Entity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace KODPersonalAccount.Controllers.Directions;
+namespace KODPersonalAccount.Applications;
 
 [ApiController]
 [Route("directions")]

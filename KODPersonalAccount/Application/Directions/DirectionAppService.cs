@@ -1,8 +1,8 @@
-using KODPersonalAccount.Contracts.Directions;
-using KODPersonalAccount.Interfaces.Repository;
-using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Models.DTO;
+using KODPersonalAccount.Applications.Interfaces.Repository;
+using KODPersonalAccount.Applications.Models.Entity;
 
-namespace KODPersonalAccount.Application.Directions;
+namespace KODPersonalAccount.Applications;
 
 /// <inheritdoc cref="IDirectionAppService"/>
 public class DirectionAppService : 

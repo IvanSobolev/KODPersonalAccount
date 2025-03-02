@@ -1,11 +1,11 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using KODPersonalAccount.Configuration;
-using KODPersonalAccount.Interfaces.Services;
+using KODPersonalAccount.Applications.Configuration;
+using KODPersonalAccount.Applications.Interfaces.Services;
 using Microsoft.IdentityModel.Tokens;
 
-namespace KODPersonalAccount.Services;
+namespace KODPersonalAccount.Applications;
 
 public class TokenGeneratorService(JwtSettings jwtSettings) : ITokenGeneratorService
 {

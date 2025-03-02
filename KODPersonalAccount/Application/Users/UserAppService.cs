@@ -1,10 +1,10 @@
-﻿using KODPersonalAccount.Interfaces.Repository;
-using KODPersonalAccount.Interfaces.Services.Users;
-using KODPersonalAccount.Models.DTO.Users;
-using KODPersonalAccount.Models.Entity;
-using KODPersonalAccount.Models.Strunctures;
+﻿using KODPersonalAccount.Applications.Interfaces.Repository;
+using KODPersonalAccount.Applications.Interfaces.Services.Users;
+using KODPersonalAccount.Applications.Models.DTO;
+using KODPersonalAccount.Applications.Models.Entity;
+using KODPersonalAccount.Applications.Models.Strunctures;
 
-namespace KODPersonalAccount.Application.Users;
+namespace KODPersonalAccount.Applications;
 
 /// <inheritdoc cref="IUserAppService"/>
 public class UserAppService(IUserRepository userRepository) : IUserAppService

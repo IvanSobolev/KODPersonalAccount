@@ -1,6 +1,6 @@
-using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Applications.Models.Entity;
 
-namespace KODPersonalAccount.Contracts.Lessons;
+namespace KODPersonalAccount.Models.DTO;
 
 /// <summary>
 /// Сервис урока.

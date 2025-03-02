@@ -1,4 +1,4 @@
-﻿namespace KODPersonalAccount.Configuration;
+﻿namespace KODPersonalAccount.Applications.Configuration;
 
 public class JwtSettings
 {

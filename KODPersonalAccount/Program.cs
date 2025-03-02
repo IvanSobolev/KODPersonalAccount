@@ -1,16 +1,9 @@
-using KODPersonalAccount.Application.Directions;
-using KODPersonalAccount.Application.Groups;
-using KODPersonalAccount.Application.Lessons;
-using KODPersonalAccount.Application.Users;
-using KODPersonalAccount.Contracts.Directions;
-using KODPersonalAccount.Contracts.Groups;
-using KODPersonalAccount.Contracts.Lessons;
-using KODPersonalAccount.EntityFrameworkCore;
-using KODPersonalAccount.EntityFrameworkCore.Implementation.Repository;
-using KODPersonalAccount.Interfaces.Repository;
-using KODPersonalAccount.Interfaces.Services.Users;
-using KODPersonalAccount.Models;
-using KODPersonalAccount.Models.Repository;
+using KODPersonalAccount.Applications;
+using KODPersonalAccount.Applications.Groups;
+using KODPersonalAccount.Models.DTO;
+using KODPersonalAccount.Applications.EntityFrameworkCore;
+using KODPersonalAccount.Applications.Interfaces.Repository;
+using KODPersonalAccount.Applications.Interfaces.Services.Users;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

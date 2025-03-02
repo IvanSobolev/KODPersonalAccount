@@ -1,10 +1,10 @@
-﻿using KODPersonalAccount.EntityFrameworkCore;
-using KODPersonalAccount.Interfaces.Repository;
-using KODPersonalAccount.Models.Entity;
-using KODPersonalAccount.Models.Strunctures;
+﻿using KODPersonalAccount.Applications.EntityFrameworkCore;
+using KODPersonalAccount.Applications.Interfaces.Repository;
+using KODPersonalAccount.Applications.Models.Entity;
+using KODPersonalAccount.Applications.Models.Strunctures;
 using Microsoft.EntityFrameworkCore;
 
-namespace KODPersonalAccount.Models.Repository;
+namespace KODPersonalAccount.Applications;
 
 public class RefreshTokenRepository(DataContext context) : IRefreshTokenRepository
 {

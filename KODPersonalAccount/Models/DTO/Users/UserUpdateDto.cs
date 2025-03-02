@@ -1,4 +1,4 @@
-namespace KODPersonalAccount.Models.DTO.Users;
+namespace KODPersonalAccount.Applications.Models.DTO;
 
 /// <summary>
 /// DTO обновления пользователя.

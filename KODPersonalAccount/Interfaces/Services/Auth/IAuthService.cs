@@ -1,7 +1,6 @@
-﻿using KODPersonalAccount.Models.DTO;
-using KODPersonalAccount.Models.DTO.Token;
+﻿using KODPersonalAccount.Applications.Models.DTO;
 
-namespace KODPersonalAccount.Interfaces.Services;
+namespace KODPersonalAccount.Applications.Interfaces.Services;
 
 public interface IAuthService
 {

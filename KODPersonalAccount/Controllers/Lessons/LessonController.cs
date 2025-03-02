@@ -1,8 +1,8 @@
-using KODPersonalAccount.Contracts.Lessons;
-using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Models.DTO;
+using KODPersonalAccount.Applications.Models.Entity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace KODPersonalAccount.Controllers.Lessons;
+namespace KODPersonalAccount.Applications;
 
 [ApiController]
 [Route("lessons")]

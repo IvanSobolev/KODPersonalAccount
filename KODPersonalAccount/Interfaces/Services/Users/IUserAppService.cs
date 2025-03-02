@@ -1,8 +1,8 @@
-﻿using KODPersonalAccount.Models.DTO.Users;
-using KODPersonalAccount.Models.Entity;
-using KODPersonalAccount.Models.Strunctures;
+﻿using KODPersonalAccount.Applications.Models.DTO;
+using KODPersonalAccount.Applications.Models.Entity;
+using KODPersonalAccount.Applications.Models.Strunctures;
 
-namespace KODPersonalAccount.Interfaces.Services.Users;
+namespace KODPersonalAccount.Applications.Interfaces.Services.Users;
 
 public interface IUserAppService
 {

@@ -1,8 +1,8 @@
-using KODPersonalAccount.Contracts.Groups;
-using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Models.DTO;
+using KODPersonalAccount.Applications.Models.Entity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace KODPersonalAccount.Controllers.Groups;
+namespace KODPersonalAccount.Applications;
 
 [ApiController]
 [Route("groups")]

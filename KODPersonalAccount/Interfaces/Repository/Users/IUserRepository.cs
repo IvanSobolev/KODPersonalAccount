@@ -1,8 +1,8 @@
-﻿using KODPersonalAccount.Models;
-using KODPersonalAccount.Models.Entity;
-using KODPersonalAccount.Models.Strunctures;
+﻿using KODPersonalAccount.Applications.Models.Entity;
+using KODPersonalAccount.Applications.Models.Strunctures;
+using KODPersonalAccount.Applications.Models;
 
-namespace KODPersonalAccount.Interfaces.Repository;
+namespace KODPersonalAccount.Applications.Interfaces.Repository;
 
 public interface IUserRepository
 {

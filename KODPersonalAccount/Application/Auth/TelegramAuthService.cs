@@ -1,10 +1,10 @@
 ﻿using System.Text.Json;
 using System.Web;
-using KODPersonalAccount.Interfaces.Services;
-using KODPersonalAccount.Models.DTO;
-using KODPersonalAccount.Models.Strunctures;
+using KODPersonalAccount.Applications.Interfaces.Services;
+using KODPersonalAccount.Applications.Models.Strunctures;
+using KODPersonalAccount.Applications.Models.DTO;
 
-namespace KODPersonalAccount.Services;
+namespace KODPersonalAccount.Applications;
 
 public class TelegramAuthService(string botToken) : ITelegramAuthService
 {

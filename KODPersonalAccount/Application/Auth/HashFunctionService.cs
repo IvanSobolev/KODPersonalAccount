@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace KODPersonalAccount.Services;
+namespace KODPersonalAccount.Applications;
 
 public static class HashFunctionService
 {

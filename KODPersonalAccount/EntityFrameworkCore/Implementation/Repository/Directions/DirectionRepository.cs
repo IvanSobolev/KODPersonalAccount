@@ -1,9 +1,9 @@
-using KODPersonalAccount.Interfaces.Repository;
-using KODPersonalAccount.Models;
-using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Applications.EntityFrameworkCore;
+using KODPersonalAccount.Applications.Interfaces.Repository;
+using KODPersonalAccount.Applications.Models.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace KODPersonalAccount.EntityFrameworkCore.Implementation.Repository;
+namespace KODPersonalAccount.Applications;
 
 /// <inheritdoc cref="IDirectionRepository"/>
 public class DirectionRepository :

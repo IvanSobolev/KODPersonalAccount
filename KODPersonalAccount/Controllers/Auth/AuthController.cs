@@ -1,9 +1,9 @@
 ﻿using System.Security.Claims;
-using KODPersonalAccount.Interfaces.Services;
+using KODPersonalAccount.Applications.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace KODPersonalAccount.Controllers;
+namespace KODPersonalAccount.Applications.Controllers;
 
 [ApiController]
 [Route("[controller]")]

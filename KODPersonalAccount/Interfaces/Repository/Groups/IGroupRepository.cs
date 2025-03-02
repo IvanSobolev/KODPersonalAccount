@@ -1,6 +1,6 @@
-﻿using KODPersonalAccount.Models.Entity;
+﻿using KODPersonalAccount.Applications.Models.Entity;
 
-namespace KODPersonalAccount.Interfaces.Repository;
+namespace KODPersonalAccount.Applications.Interfaces.Repository;
 
 /// <summary>
 /// Репозиторий группы.

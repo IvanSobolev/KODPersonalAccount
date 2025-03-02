@@ -1,7 +1,6 @@
-using KODPersonalAccount.Interfaces.Repository;
-using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Applications.Models.Entity;
 
-namespace KODPersonalAccount.Contracts.Directions;
+namespace KODPersonalAccount.Models.DTO;
 
 /// <summary>
 /// Сервис направления.

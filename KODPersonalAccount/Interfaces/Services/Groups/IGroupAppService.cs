@@ -1,6 +1,6 @@
-using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Applications.Models.Entity;
 
-namespace KODPersonalAccount.Contracts.Groups;
+namespace KODPersonalAccount.Models.DTO;
 
 /// <summary>
 /// Сервис группы.

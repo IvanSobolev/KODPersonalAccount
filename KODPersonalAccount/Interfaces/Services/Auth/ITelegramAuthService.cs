@@ -1,7 +1,6 @@
-﻿using KODPersonalAccount.Models.DTO;
-using KODPersonalAccount.Models.Strunctures;
+﻿using KODPersonalAccount.Applications.Models.Strunctures;
 
-namespace KODPersonalAccount.Interfaces.Services;
+namespace KODPersonalAccount.Applications.Interfaces.Services;
 
 public interface ITelegramAuthService
 {

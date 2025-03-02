@@ -1,4 +1,4 @@
-﻿namespace KODPersonalAccount.Models.Entity;
+﻿namespace KODPersonalAccount.Applications.Models.Entity;
 
 /// <summary>
 /// Направление.

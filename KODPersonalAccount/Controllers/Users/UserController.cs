@@ -1,12 +1,12 @@
 ﻿using System.Security.Claims;
-using KODPersonalAccount.Interfaces.Services.Users;
-using KODPersonalAccount.Models.DTO.Users;
-using KODPersonalAccount.Models.Entity;
-using KODPersonalAccount.Models.Strunctures;
+using KODPersonalAccount.Applications.Interfaces.Services.Users;
+using KODPersonalAccount.Applications.Models.DTO;
+using KODPersonalAccount.Applications.Models.Entity;
+using KODPersonalAccount.Applications.Models.Strunctures;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace KODPersonalAccount.Controllers.Users;
+namespace KODPersonalAccount.Applications;
 
 [ApiController]
 [Route("users")]

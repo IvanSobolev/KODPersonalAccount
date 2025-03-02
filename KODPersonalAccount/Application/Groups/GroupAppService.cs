@@ -1,8 +1,8 @@
-using KODPersonalAccount.Contracts.Groups;
-using KODPersonalAccount.Interfaces.Repository;
-using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Models.DTO;
+using KODPersonalAccount.Applications.Interfaces.Repository;
+using KODPersonalAccount.Applications.Models.Entity;
 
-namespace KODPersonalAccount.Application.Groups;
+namespace KODPersonalAccount.Applications.Groups;
 
 /// <inheritdoc cref="IGroupAppService"/>
 public class GroupAppService : 

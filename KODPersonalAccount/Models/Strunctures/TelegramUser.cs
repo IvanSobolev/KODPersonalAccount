@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace KODPersonalAccount.Models.Strunctures;
+namespace KODPersonalAccount.Applications.Models.Strunctures;
 
 public class TelegramUser
 {

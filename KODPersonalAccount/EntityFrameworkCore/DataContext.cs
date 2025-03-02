@@ -1,7 +1,7 @@
-﻿using KODPersonalAccount.Models.Entity;
+﻿using KODPersonalAccount.Applications.Models.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace KODPersonalAccount.EntityFrameworkCore;
+namespace KODPersonalAccount.Applications.EntityFrameworkCore;
 
 public class DataContext : DbContext
 {

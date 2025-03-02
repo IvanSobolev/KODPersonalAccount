@@ -1,4 +1,4 @@
-namespace KODPersonalAccount.Contracts.Groups;
+namespace KODPersonalAccount.Models.DTO;
 
 /// <summary>
 /// DTO обновления группы.

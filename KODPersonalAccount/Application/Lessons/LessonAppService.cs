@@ -1,8 +1,8 @@
-using KODPersonalAccount.Contracts.Lessons;
-using KODPersonalAccount.Interfaces.Repository;
-using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Models.DTO;
+using KODPersonalAccount.Applications.Interfaces.Repository;
+using KODPersonalAccount.Applications.Models.Entity;
 
-namespace KODPersonalAccount.Application.Lessons;
+namespace KODPersonalAccount.Applications;
 
 /// <inheritdoc cref="ILessonAppService"/>
 public class LessonAppService :

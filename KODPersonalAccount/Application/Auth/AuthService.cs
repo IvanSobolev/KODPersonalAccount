@@ -1,11 +1,10 @@
-﻿using KODPersonalAccount.Interfaces.Repository;
-using KODPersonalAccount.Interfaces.Services;
-using KODPersonalAccount.Models.DTO;
-using KODPersonalAccount.Models.DTO.Token;
-using KODPersonalAccount.Models.Entity;
-using KODPersonalAccount.Models.Strunctures;
+﻿using KODPersonalAccount.Applications.Interfaces.Repository;
+using KODPersonalAccount.Applications.Interfaces.Services;
+using KODPersonalAccount.Applications.Models.Entity;
+using KODPersonalAccount.Applications.Models.Strunctures;
+using KODPersonalAccount.Applications.Models.DTO;
 
-namespace KODPersonalAccount.Services;
+namespace KODPersonalAccount.Applications;
 
 public class AuthService(ITokenGeneratorService tokenGenerator, IRefreshTokenRepository refreshTokenRepository, IUserRepository userRepository)
     : IAuthService

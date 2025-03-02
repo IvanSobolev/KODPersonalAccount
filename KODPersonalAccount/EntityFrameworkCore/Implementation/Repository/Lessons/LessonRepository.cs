@@ -1,9 +1,10 @@
-using KODPersonalAccount.Interfaces.Repository;
-using KODPersonalAccount.Models;
-using KODPersonalAccount.Models.Entity;
+using KODPersonalAccount.Applications.EntityFrameworkCore;
+using KODPersonalAccount.Applications.Interfaces.Repository;
+using KODPersonalAccount.Applications.Models.Entity;
+using KODPersonalAccount.Applications.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace KODPersonalAccount.EntityFrameworkCore.Implementation.Repository;
+namespace KODPersonalAccount.Applications;
 
 /// <inheritdoc cref="ILessonRepository"/>
 public class LessonRepository :

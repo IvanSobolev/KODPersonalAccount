@@ -1,4 +1,4 @@
-﻿namespace KODPersonalAccount.Interfaces.Services;
+﻿namespace KODPersonalAccount.Applications.Interfaces.Services;
 
 public interface ITokenGeneratorService
 {
