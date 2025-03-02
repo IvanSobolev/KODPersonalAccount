@@ -1,0 +1,21 @@
+﻿services:
+  kod:
+    container_name: K.O.D.
+    build:
+      context: .
+      dockerfile: KODPersonalAccount/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234567890
+      POSTGRES_DB: KOD
+    volumes:
+      - "./database:/var/lib//postgresql/data"
