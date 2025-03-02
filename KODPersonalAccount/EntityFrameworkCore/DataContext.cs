@@ -1,7 +1,7 @@
 ﻿using KODPersonalAccount.Models.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace KODPersonalAccount.Models;
+namespace KODPersonalAccount.EntityFrameworkCore;
 
 public class DataContext : DbContext
 {
@@ -18,7 +18,6 @@ public class DataContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-
         modelBuilder.Entity<Group>(g =>
         {
             g.ToTable("Groups");
@@ -33,6 +32,7 @@ public class DataContext : DbContext
             g.HasMany<User>(p => p.Students).WithMany()
                 .UsingEntity("StudentToGroup");
         });
+        
         modelBuilder.Entity<Direction>(d =>
         {
             d.ToTable("Directions");
