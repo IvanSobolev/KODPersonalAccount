@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KODPersonalAccount.Controllers.Directions;
 
+[ApiController]
+[Route("directions")]
 public class DirectionController : 
     Controller
 {
@@ -14,6 +16,7 @@ public class DirectionController :
         _directionAppService = directionAppService;
     }
     
+    [HttpGet]
     public async Task<ActionResult<Direction>> GetAsync(
         string title)
     {
@@ -26,6 +29,7 @@ public class DirectionController :
         return Ok(direction);
     }
 
+    [HttpPost]
     public async Task<ActionResult<Direction>> CreateAsync(
         DirectionCreateDto input)
     {
@@ -41,6 +45,7 @@ public class DirectionController :
         return Ok(newDirection);
     }
 
+    [HttpPut("{title:length(128):required}")]
     public async Task<ActionResult<Direction>> UpdateAsync(
         string title, 
         DirectionUpdateDto input)
@@ -55,6 +60,7 @@ public class DirectionController :
         return Ok(direction);
     }
 
+    [HttpDelete("{title:length(128):required}")]
     public async Task<ActionResult> DeleteAsync(string title)
     {
         var direction = await _directionAppService.GetAsync(
