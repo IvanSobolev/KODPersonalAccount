@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace KODPersonalAccount.Controllers.Lessons;
 
 [ApiController]
-[Route("lesson/[controller]")]
+[Route("lessons")]
 public class LessonController : 
     Controller
 {
@@ -29,7 +29,7 @@ public class LessonController :
         return Ok(lesson);
     }
 
-    [HttpGet("lessons/{lessonId:guid}")]
+    [HttpGet]
     public async Task<ActionResult<List<Lesson>>> GetListAsync(
         Guid? groupId)
     {
