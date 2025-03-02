@@ -44,7 +44,7 @@ public class TelegramAuthService(string botToken) : ITelegramAuthService
 
         if (string.IsNullOrEmpty(userJson))
         {
-            return Task.FromResult<>(null);
+            return Task.FromResult<TelegramUser?>(null);
         }
 
         return Task.FromResult(JsonSerializer.Deserialize<TelegramUser>(userJson));

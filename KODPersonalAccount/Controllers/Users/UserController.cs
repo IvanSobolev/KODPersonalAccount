@@ -1,5 +1,6 @@
 ﻿using System.Security.Claims;
 using KODPersonalAccount.Interfaces.Services.Users;
+using KODPersonalAccount.Models.DTO.Users;
 using KODPersonalAccount.Models.Entity;
 using KODPersonalAccount.Models.Strunctures;
 using Microsoft.AspNetCore.Authorization;
@@ -8,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace KODPersonalAccount.Controllers.Users;
 
 [ApiController]
-[Route("[controller]")]
+[Route("users")]
 public class UserController(IUserAppService userAppService) : Controller
 {
     private readonly IUserAppService _userAppService = userAppService;
@@ -28,7 +29,7 @@ public class UserController(IUserAppService userAppService) : Controller
         return Ok(user);
     }
     
-    [HttpGet("getUser/{id}")]
+    [HttpGet("{id:long}")]
     public async Task<IActionResult> GetUserAsync(long id)
     {
         User? user = await _userAppService.GetUserByIdAsync(Convert.ToInt64(id));
@@ -40,30 +41,30 @@ public class UserController(IUserAppService userAppService) : Controller
         return Ok(user);
     }
     
-    [HttpGet("getUsers/{page}/{pagesize}")]
+    [HttpGet]
     public async Task<IActionResult> GetUserAsync(int page, int pagesize)
     {
         return Ok(await _userAppService.GetAllUsersAsync(page, pagesize));
     }
     
-    [HttpGet("getPointsSorted/{page}/{pagesize}")]
+    [HttpGet("getPoints")]
     public async Task<IActionResult> GetPointSortedAsync(int page, int pagesize)
     {
         return Ok(await _userAppService.GetSortedByPointsAsync(page, pagesize));
     }
     
     [Authorize]
-    [HttpPost("updateName/")]
-    public async Task<IActionResult> UpdateNameAsync([FromBody]string newName, [FromBody]bool isLastname)
+    [HttpPut]
+    public async Task<IActionResult> UpdateNameAsync([FromBody]UserUpdateDto input)
     {
         var id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         var role = User.FindFirst(ClaimTypes.Role)?.Value;
-        return Ok(await _userAppService.UpdateNameAsync(Convert.ToInt64(id), newName, isLastname));
+        return Ok(await _userAppService.UpdateNameAsync(Convert.ToInt64(id), input.NewName, input.IsLastName));
     }
     
     [Authorize]
-    [HttpPost("updateName/{userid}")]
-    public async Task<IActionResult> UpdateNameAsync(int userid, [FromBody]string newName, [FromBody]bool isLastname)
+    [HttpPut("{userid:long}")]
+    public async Task<IActionResult> UpdateNameAsync(long userid, [FromBody]UserUpdateDto input)
     {
         var role = User.FindFirst(ClaimTypes.Role)?.Value;
 
@@ -71,12 +72,12 @@ public class UserController(IUserAppService userAppService) : Controller
         {
             return Unauthorized("Недоступно.");
         }
-        return Ok(await _userAppService.UpdateNameAsync(userid, newName, isLastname));
+        return Ok(await _userAppService.UpdateNameAsync(userid, input.NewName, input.IsLastName));
     }
     
     [Authorize]
-    [HttpPost("addPoint/{userid}")]
-    public async Task<IActionResult> UpdateNameAsync(int userid, [FromBody]float point)
+    [HttpPost("addPoint/{userid:long}")]
+    public async Task<IActionResult> UpdateNameAsync(long userid, [FromBody]float point)
     {
         var role = User.FindFirst(ClaimTypes.Role)?.Value;
 
@@ -89,7 +90,7 @@ public class UserController(IUserAppService userAppService) : Controller
     
     [Authorize]
     [HttpPost("updateTelegramData/")]
-    public async Task<IActionResult> UpdateTelegrammDataAsync([FromBody] TelegramUser user)
+    public async Task<IActionResult> UpdateTelegrammDataAsync([FromBody]TelegramUser user)
     {
         var id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         if (Convert.ToInt64(id) != user.Id)
@@ -101,8 +102,8 @@ public class UserController(IUserAppService userAppService) : Controller
     }
     
     [Authorize]
-    [HttpPost("updateTelegramData/{userId}")]
-    public async Task<IActionResult> UpdateTelegrammDataAsync(long userId, [FromBody] TelegramUser user)
+    [HttpPut("updateTelegramData/{userId:long}")]
+    public async Task<IActionResult> UpdateTelegrammDataAsync(long userId, [FromBody]TelegramUser user)
     {
         var role = User.FindFirst(ClaimTypes.Role)?.Value;
         if (role != "Админ")
@@ -114,7 +115,7 @@ public class UserController(IUserAppService userAppService) : Controller
     }
 
     [Authorize]
-    [HttpDelete("deleteUser/{userid}")]
+    [HttpDelete("{userid:long}")]
     public async Task<IActionResult> DeleteUserAsync(long userId)
     {
         var role = User.FindFirst(ClaimTypes.Role)?.Value;
