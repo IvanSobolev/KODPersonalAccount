@@ -38,10 +38,13 @@ const GroupModal = ({ group, lessons, lessonsLoading, lessonsError, onClose }) =
         setCreationError(null);
 
         try {
+            // Преобразуем дату в формат ISO 8601 (например, "2025-03-03T18:49:59.195Z")
+            const isoDate = new Date(newLessonDate).toISOString();
+
             const response = await axios.post('http://localhost:8080/lessons', {
                 groupId: group.id,
                 title: newLessonTitle,
-                date: null,
+                date: isoDate, // Используем дату в формате ISO 8601
                 recordLink: newLessonRecordLink || null,
             });
 
