@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0e1ab31c-0e88-4920-8853-97b141e8371b" name="Changes" comment="frontend init nakonetsto">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AddLessonModal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/GroupModal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Groups.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/UserContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.idea.KODPersonalAccount/Docker/compose.generated.override.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.KODPersonalAccount/Docker/compose.generated.override.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KODPersonalAccount/Models/Entity/Group.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../KODPersonalAccount/Models/Entity/Group.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KODPersonalAccount/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../KODPersonalAccount/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/PG_VERSION" beforeDir="false" afterPath="$PROJECT_DIR$/../database/PG_VERSION" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/1/1259" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/1/1259" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/1/2619" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/1/2619" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/1/2619_vm" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/1/2619_vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/1/2696" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/1/2696" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/1/2840" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/1/2840" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/1/2841" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/1/2841" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/1/PG_VERSION" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/1/PG_VERSION" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/1/pg_internal.init" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/1/pg_internal.init" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/1247" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/1247" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/1249" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/1249" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/1259" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/1259" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16385" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16385" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16388" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16388" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16390" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16390" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16394" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16394" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16395" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16395" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16397" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16397" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16402" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16402" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16403" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16403" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16405" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16405" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16409" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16409" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16410" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16410" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16422" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16422" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16426" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16426" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16427" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16427" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16437" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16437" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16452" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16452" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16464" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16464" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16465" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16465" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16466" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16466" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16467" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16467" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16468" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16468" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/16469" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/16469" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2224" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2224" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2579" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2579" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2606" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2606" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2608" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2608" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2610" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2610" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2620" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2620" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2658" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2658" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2659" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2659" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2662" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2662" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2663" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2663" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2664" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2664" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2665" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2665" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2666" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2666" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2667" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2667" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2673" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2673" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2674" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2674" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2678" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2678" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2679" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2679" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2699" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2699" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2701" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2701" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2702" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2702" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2703" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2703" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/2704" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/2704" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/3455" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/3455" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/5002" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/5002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/PG_VERSION" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/PG_VERSION" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/16384/pg_internal.init" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/16384/pg_internal.init" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/4/PG_VERSION" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/4/PG_VERSION" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/5/PG_VERSION" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/5/PG_VERSION" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/base/5/pg_internal.init" beforeDir="false" afterPath="$PROJECT_DIR$/../database/base/5/pg_internal.init" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/global/1260" beforeDir="false" afterPath="$PROJECT_DIR$/../database/global/1260" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/global/pg_control" beforeDir="false" afterPath="$PROJECT_DIR$/../database/global/pg_control" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/global/pg_internal.init" beforeDir="false" afterPath="$PROJECT_DIR$/../database/global/pg_internal.init" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/pg_hba.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../database/pg_hba.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/pg_ident.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../database/pg_ident.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/pg_stat/pgstat.stat" beforeDir="false" afterPath="$PROJECT_DIR$/../database/pg_stat/pgstat.stat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/pg_wal/000000010000000000000001" beforeDir="false" afterPath="$PROJECT_DIR$/../database/pg_wal/000000010000000000000001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/pg_xact/0000" beforeDir="false" afterPath="$PROJECT_DIR$/../database/pg_xact/0000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/postgresql.auto.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../database/postgresql.auto.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/postgresql.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../database/postgresql.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/postmaster.opts" beforeDir="false" afterPath="$PROJECT_DIR$/../database/postmaster.opts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JSX File" />
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;LokiMATI&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/IvanSobolev/KODPersonalAccount.git&quot;,
+    &quot;accountId&quot;: &quot;e0e0354e-71ac-4b2d-8e7b-153a3e4bba7a&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2tnBh6BQeuZK8nPB2GUW92KqeiK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.Dockerfile.executor": "Run",
+    "Node.js.Groups.jsx.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "develop",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\Program\\WebStorm 2024.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="containerName" value="" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.Dockerfile" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0e1ab31c-0e88-4920-8853-97b141e8371b" name="Changes" comment="" />
+      <created>1740978075056</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740978075056</updated>
+      <workItem from="1740978076463" duration="3939000" />
+      <workItem from="1740982175835" duration="48000" />
+      <workItem from="1740995726998" duration="613000" />
+      <workItem from="1741019926555" duration="6165000" />
+    </task>
+    <task id="LOCAL-00001" summary="frontend init 2">
+      <option name="closed" value="true" />
+      <created>1740978311748</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740978311748</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="frontend init 2" />
+    <MESSAGE value="frontend init nakonetsto" />
+    <option name="LAST_COMMIT_MESSAGE" value="frontend init nakonetsto" />
+  </component>
+</project>

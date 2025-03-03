@@ -1,9 +1,45 @@
+using KODPersonalAccount.Applications;
+using KODPersonalAccount.Applications.Groups;
+using KODPersonalAccount.Models.DTO;
+using KODPersonalAccount.Applications.EntityFrameworkCore;
+using KODPersonalAccount.Applications.Interfaces.Repository;
+using KODPersonalAccount.Applications.Interfaces.Services.Users;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<ILessonRepository, LessonRepository>();
+builder.Services.AddScoped<ILessonAppService, LessonAppService>();
+
+
+builder.Services.AddScoped<IGroupRepository, GroupRepository>();
+builder.Services.AddScoped<IGroupAppService, GroupAppService>();
+
+builder.Services.AddScoped<IDirectionRepository, DirectionRepository>();
+builder.Services.AddScoped<IDirectionAppService, DirectionAppService>();
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserAppService, UserAppService>();
+
+builder.Services.AddDbContext<DataContext>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresSQL"));
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "Frontend",
+        policy  =>
+        {
+            policy.WithOrigins("*");
+            policy.AllowAnyHeader();
+            policy.AllowAnyMethod();
+        });
+});
 
 var app = builder.Build();
 
@@ -14,31 +50,21 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("Frontend");
+
 app.UseHttpsRedirection();
+app.UseRouting();
+app.MapControllers();
 
-var summaries = new[]
+using (var scope = app.Services.CreateScope())
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<DataContext>();
+    if (context.Database.GetPendingMigrations().Any())
     {
-        var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                (
-                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Random.Shared.Next(-20, 55),
-                    summaries[Random.Shared.Next(summaries.Length)]
-                ))
-            .ToArray();
-        return forecast;
-    })
-    .WithName("GetWeatherForecast")
-    .WithOpenApi();
+        context.Database.Migrate();
+    }
+}
+
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
