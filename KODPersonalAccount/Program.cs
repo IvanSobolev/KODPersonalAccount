@@ -32,12 +32,13 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(policy =>
-    {
-        policy.WithOrigins("http://localhost:3000");
-        policy.AllowAnyHeader();
-        policy.AllowAnyMethod();
-    });
+    options.AddPolicy(name: "Frontend",
+        policy  =>
+        {
+            policy.WithOrigins("*");
+            policy.AllowAnyHeader();
+            policy.AllowAnyMethod();
+        });
 });
 
 var app = builder.Build();
@@ -49,7 +50,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors();
+app.UseCors("Frontend");
+
 app.UseHttpsRedirection();
 app.UseRouting();
 app.MapControllers();
@@ -63,5 +65,6 @@ using (var scope = app.Services.CreateScope())
         context.Database.Migrate();
     }
 }
+
 
 app.Run();

@@ -57,6 +57,12 @@ public class Group
         Direction = direction;
         Students = new();
 
+        if (schedule is not null)
+        {
+            SetSchedule(
+                schedule);
+        }
+        
         if (students is not null)
         {
             SetStudents(
