@@ -26,4 +26,4 @@
 ## Дополнительные материалы:
 - https://www.figma.com/design/jzpZ6dL9PKRezyZWqUeWwj/Untitled?node-id=1-6&t=AnCQLAlu3LcT69J9-0
 - https://www.figma.com/board/zXlIYNSQNt979UrKLGR5wk/Untitled?node-id=0-1&p=f&t=qzWtdKpxKf0XonpN-0
-- ![img.png](img.png)
+- ![img.jpg](img.jpg)
